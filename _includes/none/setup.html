@@ -3,20 +3,24 @@
 
 <h3>Install packages</h3>
 
-Install `tidyverse` and `Seurat` packages from the RStudio Packages tab or by copy-pasting
-the following in the Console:
+Install `tidyverse`, `Matrix`, `Seurat` and `BiocManager` packages from the RStudio Packages tab or by copy-pasting
+the following in the Console. Once `BiocManager` is installed load `SingleCellExperiment` and `scds` from Bioconductor.
 
 ~~~
-install.packages(c("tidyverse", "Seurat"), dependencies = TRUE)
+install.packages(c("tidyverse", "Matrix", "Seurat", "BiocManager"), dependencies = TRUE)
+BiocManager::install(c("SingleCellExperiment", "scds"))
 ~~~
 {: .r}
 
-Once the installation has finished, load the libraries to verify that both packages
+Once the installation has finished, load the libraries to verify that all packages
 installed correctly.
 
 ~~~
 library(tidyverse)
+library(Matrix)
 library(Seurat)
+library(SingleCellExperiment)
+library(scds)
 ~~~
 {: .r}
 
