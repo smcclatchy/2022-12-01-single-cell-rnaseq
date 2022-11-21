@@ -4,11 +4,11 @@
 <h3>Install packages</h3>
 
 Install `tidyverse`, `Matrix`, `Seurat` and `BiocManager` packages from the RStudio Packages tab or by copy-pasting
-the following in the Console. Once `BiocManager` is installed load `SingleCellExperiment` and `scds` from Bioconductor.
+the following in the Console. Once `BiocManager` is installed load `SingleCellExperiment`, `scds` and `harmony` from Bioconductor.
 
 ~~~
 install.packages(c("tidyverse", "Matrix", "Seurat", "BiocManager"), dependencies = TRUE)
-BiocManager::install(c("SingleCellExperiment", "scds"))
+BiocManager::install(c("SingleCellExperiment", "scds", "harmony"))
 ~~~
 {: .r}
 
@@ -21,6 +21,7 @@ library(Matrix)
 library(Seurat)
 library(SingleCellExperiment)
 library(scds)
+library(harmony)
 ~~~
 {: .r}
 
@@ -52,14 +53,24 @@ dir.create("results")
 
 ## Data Download
 
+Open the `scRNA.Rproj` project.
 **Before the workshop**, please download the following files:
-
-TBD: Users will download a subset of the counts and metadata from
-somewhere (Box?). So far, 25% of the full data from liveratlas.org seems
-to work well.
-
-> DAS: Add some code here to download the file into `data`.
 ~~~
-download.file(url = '', destfile = 'data/name_of_data.rds')
+download.file(url = 'https://thejacksonlaboratory.box.com/shared/static/vfe1bwyqtypxs6p5k4z0cw7z7jczyan1.zip', 
+              destfile = 'data/mouseStSt_exvivo.zip',
+              method   = 'curl', 
+              extra    = ' -L ')
+download.file(url = 'https://thejacksonlaboratory.box.com/shared/static/b153ueu2lie3st760maj4zr9u0vp7o2t.zip', 
+              destfile = 'data/mouseStSt_invivo.zip',
+              method   = 'curl', 
+              extra    = ' -L ')
+download.file(url = 'https://thejacksonlaboratory.box.com/shared/static/yx64wion3etmbidtt4bm2nbl1yyceptn.txt',
+              destfile = 'data/regev_lab_cell_cycle_genes_mm.fixed.txt',
+              method   = 'curl', 
+              extra    = ' -L ')
+unzip(zipfile = 'data/mouseStSt_invivo.zip' ,
+      exdir   = 'data')
+unzip(zipfile = 'data/mouseStSt_exvivo.zip',
+      exdir   = 'data')
 ~~~
 {: .r}
