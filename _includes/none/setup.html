@@ -7,8 +7,9 @@ Install `tidyverse`, `Matrix`, `Seurat` and `BiocManager` packages from the RStu
 the following in the Console. Once `BiocManager` is installed load `SingleCellExperiment`, `scds` and `harmony` from Bioconductor.
 
 ~~~
-install.packages(c("tidyverse", "Matrix", "Seurat", "BiocManager"), dependencies = TRUE)
-BiocManager::install(c("SingleCellExperiment", "scds", "harmony"))
+install.packages(c("tidyverse", "Matrix", "Seurat", "BiocManager", "harmony",
+                   "enrichR"), dependencies = TRUE)
+BiocManager::install(c("SingleCellExperiment", "scds", "DESeq2"))
 ~~~
 {: .r}
 
