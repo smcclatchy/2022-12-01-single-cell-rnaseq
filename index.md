@@ -282,7 +282,7 @@ SURVEYS - DO NOT EDIT SURVEY LINKS
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete this survey after the workshop.</p>
-<p><a href="">Post-workshop Survey</a></p>
+<p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=qlxmXS7WeEafX-cHz57L0Wu1q3UZaBJEppukfXduunlUMzRZQTY0TTNYUUdCN0IzV0RXREpZNTVVVC4u">Post-workshop Survey</a></p>
 
 <hr/>
 
